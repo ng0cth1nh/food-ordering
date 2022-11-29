@@ -10,12 +10,12 @@ public class OrderItem extends BaseEntity<OrderItemId> {
     private final Product product;
     private final int quantity;
     private final Money price;
-    private final Money subtotal;
+    private final Money subTotal;
 
     boolean isPriceValid() {
         return price.isGreaterThanZero() &&
                 price.equals(product.getPrice()) &&
-                price.multiply(quantity).equals(subtotal);
+                price.multiply(quantity).equals(subTotal);
 
     }
     void initializeOrderItem(OrderId orderId, OrderItemId orderItemId) {
@@ -27,7 +27,7 @@ public class OrderItem extends BaseEntity<OrderItemId> {
         product = builder.product;
         quantity = builder.quantity;
         price = builder.price;
-        subtotal = builder.subtotal;
+        subTotal = builder.subTotal;
     }
 
     public static Builder builder() {
@@ -50,8 +50,8 @@ public class OrderItem extends BaseEntity<OrderItemId> {
         return price;
     }
 
-    public Money getSubtotal() {
-        return subtotal;
+    public Money getSubTotal() {
+        return subTotal;
     }
 
     public static final class Builder {
@@ -59,7 +59,7 @@ public class OrderItem extends BaseEntity<OrderItemId> {
         private Product product;
         private int quantity;
         private Money price;
-        private Money subtotal;
+        private Money subTotal;
 
         private Builder() {
         }
@@ -84,8 +84,8 @@ public class OrderItem extends BaseEntity<OrderItemId> {
             return this;
         }
 
-        public Builder subtotal(Money val) {
-            subtotal = val;
+        public Builder subTotal(Money val) {
+            subTotal = val;
             return this;
         }
 

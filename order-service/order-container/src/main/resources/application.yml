@@ -22,7 +22,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres?currentSchema=order&binaryTransfer=true&reWriteBatchedInserts=true&stringtype=unspecified
     username: postgres
-    password: admin
+    password: meomeo123
     driver-class-name: org.postgresql.Driver
     platform: postgres
     schema: classpath:schema.sql

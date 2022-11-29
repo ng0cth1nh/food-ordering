@@ -8,7 +8,9 @@
         <module>order-service</module>
         <module>common</module>
         <module>infrastructure</module>
+        <module>infrastructure/kafka</module>
         <module>customer-service</module>
+        <module>payment-service</module>
     </modules>
     <parent>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -58,6 +60,12 @@
             <dependency>
                 <groupId>org.food.ordering.system</groupId>
                 <artifactId>order-domain-application-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.food.ordering.system</groupId>
+                <artifactId>payment-domain-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
